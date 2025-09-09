@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="turquoise">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>兼容多終端的響應式網站</title>
+    <!-- 清除默認樣式 -->
+    <link rel="stylesheet" href="css/reset.css">
+    <!-- 主題皮膚樣式 -->
+    <link rel="stylesheet" href="css/skin-theme.css">
+    <!-- 全局樣式 -->
+    <link rel="stylesheet" href="css/global.css">
+    <!-- 首頁樣式 -->
+    <link rel="stylesheet" href="css/index.css">
+    <style>
+        .top{
+            height: 80px;
+            background-color: gray;
+        }
+    </style>
+
+    <!-- media & grid-system -->
+    <link rel="stylesheet" href="css/media.css">
+</head>
+<body>
+    <header class="header">
+        <!-- 如果直接在header做漸層背景(background + opcity)裡面的文字與其他元件都會受到opcity影響。
+         所以這裡用偽元素來做漸變背景 -->
+        <div class="header-content">
+            <!-- 網站header開始 -->
+             <div class="top">
+                <div class="top-content"></div>
+             </div>
+            <!-- 網站header結束 -->
+        </div>
+    </header>
+</body>
+</html>
