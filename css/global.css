@@ -8,3 +8,8 @@ body{
     font: 16px/1.5 "微軟雅黑"; /*微軟雅黑 可用中文也可用英文，都通用*/
     color: #000; /* 字體顏色 */
 }
+
+.layout{
+    max-width: 1200px;
+    margin: 0 auto;
+}

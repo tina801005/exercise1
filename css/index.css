@@ -5,7 +5,7 @@
     position: relative;
 }
 .header::before, .header-content{
-    /* 因為他們都有同一個內容樣式，所以在這裡統一管理，簡化各自的 */
+    /* 因為他們都有同一個內容樣式，所以在這裡統一管理，簡化程式碼 */
     position: absolute;
     top: 0;
     left: 0;
@@ -20,6 +20,3 @@
     background-image: linear-gradient(to bottom, var(--primary--color),var(--white-color)); 
     opacity: 0.4;
 }
-/* .header-content {
-    
-} */

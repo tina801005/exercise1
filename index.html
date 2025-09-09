@@ -15,7 +15,46 @@
     <style>
         .top{
             height: 80px;
-            background-color: gray;
+        }
+        
+        .top .top-content{
+            height: inherit;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .top .top-content ul.menu{
+            display: flex;
+            gap: 20px;
+        }
+
+        /* 導航樣式 */
+        ul.menu li a{
+            font-size: 16px;
+            color: var(--font-black-color);
+            font-size: 18px;
+        }
+        ul.menu li a:hover{
+            color: var(--primary--color);
+        }
+        ul.menu li{
+            position: relative;
+            padding-bottom: 5px;
+        }
+        /* 一級導航hover時添加底線 */
+        ul.menu li::after{
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            right: 50%;
+            height: 2px;
+            background-color: var(--primary--color);
+        }
+        ul.menu li:hover::after{
+            left: 0;
+            right: 0;
+            transition: all 0.3s;
         }
     </style>
 
@@ -29,7 +68,48 @@
         <div class="header-content">
             <!-- 網站header開始 -->
              <div class="top">
-                <div class="top-content"></div>
+                <div class="top-content layout">
+                    <!-- logo開始 -->
+                    <div class="logo">
+                        <a href="#">
+                            <img src="./image/logo.png" alt="logo" width="118">
+                        </a>
+                    </div>
+                    <!-- logo結束 -->
+                    <!-- 網站導航nav開始 -->
+                    <nav>
+                        <ul class="menu">
+                            <li><a href="#">網站首頁</a>
+                            </li>
+                            <li><a href="#">國內遊</a>
+                                <!-- <dl>
+                                    <dt>目的地</dt>
+                                    <dd><a href="#">北京</a></dd>
+                                    <dd><a href="#">三亞</a></dd>
+                                    <dd><a href="#">廣東</a></dd>
+                                    <dd><a href="#">廈門</a></dd>
+                                    <dd><a href="#">雲南</a></dd>
+                                </dl> -->
+                            </li>
+                            <li><a href="#">出境遊</a>
+                                <!-- <dl>
+                                    <dt>目的地</dt>
+                                    <dd><a href="#">泰國</a></dd>
+                                    <dd><a href="#">日本</a></dd>
+                                    <dd><a href="#">美國</a></dd>
+                                    <dd><a href="#">臺灣</a></dd>
+                                    <dd><a href="#">海島</a></dd>
+                                </dl> -->
+                            </li>
+                            <li><a href="#">周邊遊</a></li>
+                            <li><a href="#">主題遊</a></li>
+                            <li><a href="#">自由行</a></li>
+                            <li><a href="#">合作案例</a></li>
+                            <li><a href="#">關於我們</a></li>
+                        </ul>
+                    </nav>
+                <!-- 網站導航nav結束 -->
+                </div>
              </div>
             <!-- 網站header結束 -->
         </div>
