@@ -1,0 +1,79 @@
+/* 主題皮膚訂製 */
+/* 青綠色 turquoise 默認主題 */
+:root,
+html[data-theme="turquoise"] {
+  /* 主色調 */
+  --primary--color: #1ec28b; /* 主體色 */
+  --light-gray-color: #f4f4f6; /* 淺灰色 */
+  --white-color: #fff; /* 白色 */
+
+  /* 字體色 */
+  --font-black-color: #000; /* 黑色 */
+  --font-dark-grey-color: #666; /* 深灰色 */
+  --font-red-color: #ff0000; /* 红色 */
+  --font-white-color: #fff; /* 白色 */
+
+  /* 邊框色 */
+  --border-dark-grey-color: rgba(28, 28, 27, 0.22); /* 深灰色邊框 */
+
+  /* 輔助色 */
+  --sub-dark-red-color: #ff6347; /* 深红色 */
+  --sub-deep-orange-color: #ff8900; /* 深橘红色 */
+
+  /* 網站底部色 */
+  --footer-bg-color1: #2e2e2e; /* 網站底部背景色 */
+  --footer-bg-color2: #212121; /* 網站底部背景色 */
+  --footer-font-color: #d6d6d6; /* 網站底部背景色 */
+}
+
+/* 深黄色 #ffd336 */
+html[data-theme="yellow"] {
+  /* 主色調 */
+  --primary--color: #ffd336; /* 主體色 */
+  --light-gray-color: #f4f4f6; /* 淺灰色 */
+  --white-color: #fff; /* 白色 */
+
+  /* 字體色 */
+  --font-black-color: #000; /* 黑色 */
+  --font-dark-grey-color: #666; /* 深灰色 */
+  --font-red-color: #ff0000; /* 红色 */
+  --font-white-color: #fff; /* 白色 */
+
+  /* 邊框色 */
+  --border-dark-grey-color: rgba(28, 28, 27, 0.22); /* 深灰色邊框 */
+
+  /* 輔助色 */
+  --sub-dark-red-color: #ff6347; /* 深红色 */
+  --sub-deep-orange-color: #ff8900; /* 深橘红色 */
+
+  /* 網站底部色 */
+  --footer-bg-color1: #2e2e2e; /* 網站底部背景色 */
+  --footer-bg-color2: #212121; /* 網站底部背景色 */
+  --footer-font-color: #d6d6d6; /* 網站底部背景色 */
+}
+
+/* 深红色 */
+html[data-theme="red"] {
+  /* 主色調 */
+  --primary--color: #ff383f; /* 主體色 */
+  --light-gray-color: #f4f4f6; /* 淺灰色 */
+  --white-color: #fff; /* 白色 */
+
+  /* 字體色 */
+  --font-black-color: #000; /* 黑色 */
+  --font-dark-grey-color: #666; /* 深灰色 */
+  --font-red-color: #ff0000; /* 红色 */
+  --font-white-color: #fff; /* 白色 */
+
+  /* 邊框色 */
+  --border-dark-grey-color: rgba(28, 28, 27, 0.22); /* 深灰色邊框 */
+
+  /* 輔助色 */
+  --sub-dark-red-color: #ff6347; /* 深红色 */
+  --sub-deep-orange-color: #ff8900; /* 深橘红色 */
+
+  /* 網站底部色 */
+  --footer-bg-color1: #2e2e2e; /* 網站底部背景色 */
+  --footer-bg-color2: #212121; /* 網站底部背景色 */
+  --footer-font-color: #d6d6d6; /* 網站底部背景色 */
+}
