@@ -20,3 +20,97 @@
     background-image: linear-gradient(to bottom, var(--primary--color),var(--white-color)); 
     opacity: 0.4;
 }
+.top{
+    height: 80px;
+}
+
+.top .top-content{
+    height: inherit;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.top .top-content ul.menu{
+    display: flex;
+}
+
+/* 導航樣式 */
+ul.menu li a{
+    display: block;
+    color: var(--font-black-color);
+    font-size: 18px;
+    line-height: 80px;
+    padding: 0 16px 0 15px;
+}
+ul.menu li a:hover{
+    color: var(--primary--color);
+}
+ul.menu li{
+    position: relative;
+}
+/* 一級導覽hover時添加底線 */
+ul.menu li::after{
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    right: 50%;
+    height: 2px;
+    background-color: var(--primary--color);
+}
+ul.menu li:hover::after{
+    left: 0;
+    right: 0;
+    transition: all 0.3s; 
+}
+
+/* 二級下拉選單 */
+ul.menu li .menu-dropdown{
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 80px;
+    background-color: var(--white-color);
+    text-align: center;
+    transform-origin: top center; /* 設定縮放的基準點 */
+    transform: scaleY(0); /* 預設縮放為0 */
+    transition: transform 0.3s; /* 加入過渡效果 */
+    padding-top: 2px;
+    padding-bottom: 8px;
+}
+ul.menu li .menu-dropdown dt{
+    display: none;
+}
+
+ul.menu li .menu-dropdown dd{
+    overflow: hidden;
+}
+ul.menu li .menu-dropdown dd a{
+    line-height: 30px;
+    padding: 0;
+    position: relative;
+}
+ul.menu li:hover .menu-dropdown{
+    transform: scaleY(1); /* 滑鼠移上去時縮放為1 */
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1); /* 加入陰影 */
+}
+/* 繪製二級選單左側小直線 */
+.menu-dropdown dd a::before{
+    content: "";
+    position: absolute;
+    top: 7px;
+    bottom: 7px;
+    left: 10px;
+    width: 2px;
+    background-color: var(--primary--color);
+    display: none;
+}
+
+.menu-dropdown dd:hover{
+    transform: translateX(10px); 
+    transition: all 0.5s;
+}
+
+.menu-dropdown dd:hover a::before{
+    display: block; 
+} 
