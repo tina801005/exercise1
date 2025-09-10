@@ -6,7 +6,7 @@
 }
 
 @media screen and (max-width: 992px) {
-    .top nav{
+    .top nav.nav{
         display: none;
     }
     .top .nav-button{

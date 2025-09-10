@@ -137,3 +137,19 @@ ul.menu li:hover .menu-dropdown{
         transform: translateY(0); /* 回到原本位置 */
     }
 }
+
+/* 欄目小圖標 */
+.nav-button{
+    width: 34px;
+    height: 26px;
+    margin-right: 30px;
+    cursor: pointer;
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+.nav-button .fa-bars{
+    font-size: 34px;
+}
+
+/* 黑色半透明遮罩層 */
