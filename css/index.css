@@ -113,4 +113,27 @@ ul.menu li:hover .menu-dropdown{
 
 .menu-dropdown dd:hover a::before{
     display: block; 
+}
+
+.sticky{
+    background-color: var(--white-color);
+    box-shadow: 0 2px 5px var(--border-dark-grey-color);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    /* 在頁面頂部時導航列預設為透明，當頁面滾動時才有吸頂並背景為白色的效果。
+    因此，在這邊加上animation動畫來實現*/
+    animation: sticky-animation 0.5s linear both; /* both:動畫結束後保持最後一幀的狀態 */
 } 
+
+@keyframes sticky-animation{
+    0%{ 
+        opacity: 0; /* 隱藏 */
+        transform: translateY(-100%); /* 向上移動自身高度 */
+    }
+
+    100%{
+        opacity: 1; /* 顯示 */
+        transform: translateY(0); /* 回到原本位置 */
+    }
+}
