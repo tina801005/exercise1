@@ -37,7 +37,7 @@
             bottom: 0;
             background-color: rgba(0,0,0,0.5); /* 黑色半透明 */
             z-index: 100;  /*確保垂直導航在遮罩層上面 */
-            display: none;
+            /* display: none; */
 
         }
         /* 關閉按鈕的樣式 */
@@ -52,6 +52,38 @@
             line-height: 1; /* 讓文字垂直置中 */
             color: white;
             cursor: pointer; /* 滑鼠變手指 */
+        }
+        .nav-list{
+            padding-top: 100px;
+            margin: 0 30px;
+        }
+        .nav-list li h3, .nav-list li a{
+            display: block;
+            font-size: 24px;
+            margin-top: 16px;
+            color: white;
+            font-weight: 400;
+        }
+        /* 箭頭樣式 */
+        .nav-list li h3 .fa-angle-right{
+            float: right; 
+            font-size: 28px;
+            line-height: 1; 
+        }
+        .nav-list li h3 .fa-angle-right.arrow-down{
+            transform: rotate(90deg); /* 旋轉90度 */
+        }
+        /* 移動端二級導航樣式 */
+        .mobile-nav .menu-dropdown dt{
+            display: none; /* 隱藏二級選單標題 */
+        }
+        .mobile-nav .menu-dropdown dd a{
+            display: block;
+            border: 1px solid red;
+            height: 48px;
+            line-height: 48px;
+            text-indent: 60px; /*文字縮排*/
+            background-color: var(--primary--color);
         }
     </style>
 
@@ -139,6 +171,70 @@
                     <!-- ipad端及移動端垂直導航開始 -->
                     <nav class="mobile-nav" id="J_mobile-nav">
                         <i class="fa-solid fa-circle-xmark" id="J_close-icon"></i>
+                        <ul class="nav-list">
+                            <li><a href="#">首頁</a></li>
+                            <li>
+                                <h3>國內遊
+                                    <i class="fa-solid fa-angle-right "></i>
+                                </h3>
+                                <dl class="menu-dropdown">
+                                    <dt>目的地</dt>
+                                    <dd><a href="#">北京</a></dd>
+                                    <dd><a href="#">三亞</a></dd>
+                                    <dd><a href="#">廣東</a></dd>
+                                    <dd><a href="#">廈門</a></dd>
+                                    <dd><a href="#">雲南</a></dd>
+                                </dl>
+                            </li>
+                            <li>
+                                <h3>出境遊
+                                    <i class="fa-solid fa-angle-right "></i>
+                                </h3>
+                                <dl class="menu-dropdown">
+                                    <dt>目的地</dt>
+                                    <dd><a href="#">泰國</a></dd>
+                                    <dd><a href="#">日本</a></dd>
+                                    <dd><a href="#">美國</a></dd>
+                                    <dd><a href="#">臺灣</a></dd>
+                                    <dd><a href="#">海島</a></dd>
+                                </dl>
+                            </li>
+                            <li>
+                                <h3>周邊遊
+                                    <i class="fa-solid fa-angle-right "></i>
+                                </h3>
+                                <dl class="menu-dropdown">
+                                    <dt>目的地</dt>
+                                    <dd><a href="#">北海</a></dd>
+                                    <dd><a href="#">桂林</a></dd>
+                                    <dd><a href="#">張家界</a></dd>
+                                    <dd><a href="#">鳳凰</a></dd>
+                                </dl>
+                            </li>
+                            <li>
+                                <h3>主題遊
+                                    <i class="fa-solid fa-angle-right "></i>
+                                </h3>
+                                <dl class="menu-dropdown">
+                                    <dt>目的地</dt>
+                                    <dd><a href="#">遊學</a></dd>
+                                    <dd><a href="#">自組</a></dd>
+                                </dl>
+                            </li>
+                            <li>
+                                <h3>自由行
+                                    <i class="fa-solid fa-angle-right "></i>
+                                </h3>
+                                <dl class="menu-dropdown">
+                                    <dt>目的地</dt>
+                                    <dd><a href="#">三亞</a></dd>
+                                    <dd><a href="#">廈門</a></dd>
+                                    <dd><a href="#">麗江</a></dd>
+                                </dl>
+                            </li>
+                            <li><a href="#">合作案例</a></li>
+                            <li><a href="#">關於我們</a></li>
+                        </ul>
                     </nav>
                     <!-- ipad端及移動端垂直導航結束 -->
                 </div>

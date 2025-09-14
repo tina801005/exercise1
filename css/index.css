@@ -95,7 +95,7 @@ ul.menu li:hover .menu-dropdown{
     box-shadow: 0 2px 10px rgba(0,0,0,0.1); /* 加入陰影 */
 }
 /* 繪製二級選單左側小直線 */
-.menu-dropdown dd a::before{
+ul.menu .menu-dropdown dd a::before{
     content: "";
     position: absolute;
     top: 7px;
@@ -106,12 +106,12 @@ ul.menu li:hover .menu-dropdown{
     display: none;
 }
 
-.menu-dropdown dd:hover{
+ul.menu .menu-dropdown dd:hover{
     transform: translateX(10px); 
     transition: all 0.5s;
 }
 
-.menu-dropdown dd:hover a::before{
+ul.menu .menu-dropdown dd:hover a::before{
     display: block; 
 }
 
