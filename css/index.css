@@ -152,4 +152,85 @@ ul.menu .menu-dropdown dd:hover a::before{
     font-size: 34px;
 }
 
-/* 黑色半透明遮罩層 */
+/* 黑色半透明遮罩層樣式 */
+.mask{
+    display: none;  /*預設隱藏 */
+    position: fixed; /* 固定定位 */
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0,0,0,0.5); /* 黑色半透明 */
+    z-index: 99;  /*確保遮罩層在其他內容上面 */
+}
+
+/* 垂直導航樣式 */
+nav.mobile-nav{
+    width: 320px;
+    position: fixed; /* 固定定位 */
+    left: 0;
+    top: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.5); /* 黑色半透明 */
+    z-index: 100;  /*確保垂直導航在遮罩層上面 */
+    display: none;
+
+}
+/* 關閉按鈕的樣式 */
+nav.mobile-nav .fa-circle-xmark{
+    position: absolute; /* 絕對定位 */
+    top: 20px;
+    right: 20px;
+    font-size: 34px;
+    display: block;
+    width: 50px;
+    height: 50px;
+    line-height: 1; /* 讓文字垂直置中 */
+    color: white;
+    cursor: pointer; /* 滑鼠變手指 */
+}
+.nav-list{
+    padding-top: 100px;
+    margin: 0 30px;
+}
+.nav-list li{
+    height: 48px;
+    overflow: hidden; /* 超出部分隱藏 */
+    transition: all 0.3s; /* 過渡效果 */
+    cursor: pointer; /* 滑鼠變手指 */
+}
+.nav-list li h3, .nav-list li a{
+    display: block;
+    font-size: 24px;
+    margin-bottom: 16px;
+    color: white;
+    font-weight: 400;
+}
+/* 箭頭樣式 */
+.nav-list li h3 .fa-angle-right{
+    float: right; 
+    font-size: 28px;
+    line-height: 1; 
+}
+.nav-list li h3 .fa-angle-right.arrow-down{
+    transform: rotate(90deg); /* 旋轉90度 */
+}
+/* 移動端二級導航樣式 */
+.mobile-nav .menu-dropdown dt{
+    display: none; /* 隱藏二級選單標題 */
+}
+.mobile-nav .menu-dropdown dd a{
+    display: block;
+    height: 48px;
+    line-height: 48px;
+    text-indent: 60px; /*文字縮排*/
+    
+    margin-bottom: 0;
+}
+.mobile-nav .menu-dropdown{
+    padding-bottom: 12px;
+}
+.mobile-nav .menu-dropdown dd a:hover{
+    background-color: var(--primary--color); 
+    transition: all 0.2s; 
+}

@@ -16,75 +16,7 @@
     <!-- 首頁樣式 -->
     <link rel="stylesheet" href="css/index.css">
     <style>
-       /* 黑色半透明遮罩層樣式 */
-       .mask{
-            display: none;  /*預設隱藏 */
-            position: fixed; /* 固定定位 */
-            top: 0;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background-color: rgba(0,0,0,0.5); /* 黑色半透明 */
-            z-index: 99;  /*確保遮罩層在其他內容上面 */
-        }
-
-        /* 垂直導航樣式 */
-        nav.mobile-nav{
-            width: 420px;
-            position: fixed; /* 固定定位 */
-            left: 0;
-            top: 0;
-            bottom: 0;
-            background-color: rgba(0,0,0,0.5); /* 黑色半透明 */
-            z-index: 100;  /*確保垂直導航在遮罩層上面 */
-            /* display: none; */
-
-        }
-        /* 關閉按鈕的樣式 */
-        nav.mobile-nav .fa-circle-xmark{
-            position: absolute; /* 絕對定位 */
-            top: 20px;
-            right: 20px;
-            font-size: 34px;
-            display: block;
-            width: 50px;
-            height: 50px;
-            line-height: 1; /* 讓文字垂直置中 */
-            color: white;
-            cursor: pointer; /* 滑鼠變手指 */
-        }
-        .nav-list{
-            padding-top: 100px;
-            margin: 0 30px;
-        }
-        .nav-list li h3, .nav-list li a{
-            display: block;
-            font-size: 24px;
-            margin-top: 16px;
-            color: white;
-            font-weight: 400;
-        }
-        /* 箭頭樣式 */
-        .nav-list li h3 .fa-angle-right{
-            float: right; 
-            font-size: 28px;
-            line-height: 1; 
-        }
-        .nav-list li h3 .fa-angle-right.arrow-down{
-            transform: rotate(90deg); /* 旋轉90度 */
-        }
-        /* 移動端二級導航樣式 */
-        .mobile-nav .menu-dropdown dt{
-            display: none; /* 隱藏二級選單標題 */
-        }
-        .mobile-nav .menu-dropdown dd a{
-            display: block;
-            border: 1px solid red;
-            height: 48px;
-            line-height: 48px;
-            text-indent: 60px; /*文字縮排*/
-            background-color: var(--primary--color);
-        }
+       
     </style>
 
     <!-- media & grid-system -->
@@ -171,7 +103,7 @@
                     <!-- ipad端及移動端垂直導航開始 -->
                     <nav class="mobile-nav" id="J_mobile-nav">
                         <i class="fa-solid fa-circle-xmark" id="J_close-icon"></i>
-                        <ul class="nav-list">
+                        <ul class="nav-list" id="J_mobile-nav-list">
                             <li><a href="#">首頁</a></li>
                             <li>
                                 <h3>國內遊
@@ -250,36 +182,8 @@
 
     <!-- js一定要放在/body的最前面 -->
     <script src="./js/menu.js"></script>
+    <script src="./js/mobilemenu.js"></script> 
     <script>
-        //獲取欄目小圖標
-        const navIcon = document.getElementById('J-nav-icon');
-        //獲取遮罩層
-        const mask = document.getElementById('J_mask');
-        //獲取垂直菜單
-        const mobileNav = document.getElementById('J_mobile-nav');
-        //獲取關閉按鈕
-        const closeIcon = document.getElementById('J_close-icon');
-
-        function showAndHide(){
-            //綁定點擊事件
-            navIcon.addEventListener('click', function () {
-                //顯示遮罩層
-                mask.style.display = 'block';
-                //顯示垂直菜單
-                mobileNav.style.display = 'block';
-            });
-
-            //點擊close關閉遮罩層跟垂直菜單
-            closeIcon.addEventListener('click', function () {
-                //關閉隱藏遮罩層
-                mask.style.display = 'none';
-                //關閉隱藏垂直菜單
-                mobileNav.style.display = 'none';
-            });
-        };
-        showAndHide();
-        
-
     </script>
 </body>
 </html>
