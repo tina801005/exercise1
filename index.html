@@ -11,12 +11,64 @@
     <link rel="stylesheet" href="css/skin-theme.css">
     <!-- font awesome icon -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- swiper cdn -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.min.css" integrity="sha512-rd0qOHVMOcez6pLWPVFIv7EfSdGKLt+eafXh4RO/12Fgr41hDQxfGvoi1Vy55QIVcQEujUE1LQrATCLl2Fs+ag==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- 全局樣式 -->
     <link rel="stylesheet" href="css/global.css">
     <!-- 首頁樣式 -->
     <link rel="stylesheet" href="css/index.css">
     <style>
-       
+       .banner{
+           border: 1px solid red;
+           min-height: 580px;
+           margin-top: 30px;
+       }
+       .swiper-slide{
+        height: 580px;
+        font-size: 80px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        /* background-color: skyblue; */
+       }
+
+       .swiper .swiper-button-prev, .swiper .swiper-button-next{
+        color: var(--primary--color);
+       }
+       .swiper-button-next:after, .swiper-button-prev:after{
+        font-size: 61px;
+       }
+       .swiper .swiper-button-next{
+        right: 5px;
+       }
+       .swiper .swiper-button-prev{
+        left: 5px;
+       }
+       /* 分頁器的樣式 */
+       .swiper1 .swiper-pagination-bullet{
+        background-color: #d1d1d1;
+        width: 8px;
+       }
+       .swiper1 .swiper-pagination-bullet-active{
+        background-color: var(--primary--color);
+        position: relative;
+        transition: all 0.3s ease; /* 平滑過渡效果 */
+       }
+       .swiper1 .swiper-pagination-bullet-active::before{
+        content:"";
+        display: block;
+        width: 32px;
+        height: 32px;
+        border: 1px solid var(--primary--color);
+        border-radius: 50%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+       }   
+       .swiper-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet, .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet{
+        margin: 0 10px;
+       }
     </style>
 
     <!-- media & grid-system -->
@@ -171,6 +223,29 @@
                 </ul>
             </nav>
             <!-- ipad端及移動端垂直導航結束 -->
+
+            <!-- 輪播圖開始 -->
+            <div class="banner layout">
+                <!-- Slider main container -->
+                <div class="swiper swiper1">
+                <!-- Additional required wrapper -->
+                <div class="swiper-wrapper">
+                    <!-- Slides -->
+                    <div class="swiper-slide">Slide 1</div>
+                    <div class="swiper-slide">Slide 2</div>
+                    <div class="swiper-slide">Slide 3</div>
+                    <div class="swiper-slide">Slide 4</div>
+                    <div class="swiper-slide">Slide 5</div>
+                </div>
+                <!-- If we need pagination -->
+                <div class="swiper-pagination"></div>
+
+                <!-- If we need navigation buttons -->
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+                </div>
+            </div>
+            <!-- 輪播圖結束 -->
         </div>
     </header>
     
@@ -181,8 +256,32 @@
 
     <!-- js一定要放在/body的最前面 -->
     <script src="./js/menu.js"></script>
-    <script src="./js/mobilemenu.js"></script> 
+    <script src="./js/mobilemenu.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.min.js" integrity="sha512-Ysw1DcK1P+uYLqprEAzNQJP+J4hTx4t/3X2nbVwszao8wD+9afLjBQYjz7Uk4ADP+Er++mJoScI42ueGtQOzEA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> 
     <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const swiper = new Swiper('.swiper', {
+                direction: 'horizontal', // 垂直切換選項
+                loop: true,
+                // autoplay: { // 自動播放選項
+                //     delay: 3000, // 每隔3秒切換一次
+                //     disableOnInteraction: false, // 用戶操作後不停止自動播放
+                // },
+                // 如果需要分頁器
+                pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+                },
+
+                // 如果需要前進後退按鈕
+                navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+                },
+            });
+        });
+
     </script>
+    
 </body>
 </html>
