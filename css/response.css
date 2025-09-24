@@ -12,4 +12,44 @@
     .top .nav-button{
         display: block;
     }
+    /* ipad端 輪播圖適配 */
+    .swiper .swiper-button-next{
+        right: 33px;
+    }
+    .swiper .swiper-button-prev{
+        left: 33px;
+    }
+
+    .swiper1 .item-content .left{
+        text-align: center;
+    }
+
+    .swiper1 .item-content .left .small-title{
+        font-size: 40px;
+        padding-top: 137px;
+    }
+    .swiper1 .item-content .left .title{
+        font-size: 80px;
+        margin-top: 38px;
+    }
+    .swiper1 .item-content .left .desc{
+        font-size: 32px;
+        margin-top: 31px;
+        margin-bottom: 104px;
+    }
+    .swiper1 .item-content .btn{
+        width: 200px;
+        height: 64px;
+        font-size: 32px;
+        line-height: 64px;
+        border-radius: 32px;
+    }
+    .swiper1 .item-content .banner-btn{
+        display: none;
+    }
+
+    .swiper1 .item-content .mobile-banner-btn{
+
+        
+    }
 }

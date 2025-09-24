@@ -13,3 +13,10 @@ body{
     max-width: 1200px;
     margin: 0 auto;
 }
+
+.w36{
+    width: 36%;
+}
+.w64{
+    width: 64%;
+}

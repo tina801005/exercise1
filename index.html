@@ -18,59 +18,130 @@
     <!-- 首頁樣式 -->
     <link rel="stylesheet" href="css/index.css">
     <style>
-       .banner{
-           border: 1px solid red;
-           min-height: 580px;
-           margin-top: 30px;
-       }
-       .swiper-slide{
-        height: 580px;
-        font-size: 80px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        /* background-color: skyblue; */
-       }
+        .banner{
+            border: 1px solid red;
+            min-height: 580px;
+            margin-top: 30px;
+            padding: 0 10px;
+        }
+        .swiper-slide{
+            /* height: 580px; */
+            font-size: 80px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* background-color: skyblue; */
+        }
 
-       .swiper .swiper-button-prev, .swiper .swiper-button-next{
-        color: var(--primary--color);
-       }
-       .swiper-button-next:after, .swiper-button-prev:after{
-        font-size: 61px;
-       }
-       .swiper .swiper-button-next{
-        right: 5px;
-       }
-       .swiper .swiper-button-prev{
-        left: 5px;
-       }
-       /* 分頁器的樣式 */
-       .swiper1 .swiper-pagination-bullet{
-        background-color: #d1d1d1;
-        width: 8px;
-       }
-       .swiper1 .swiper-pagination-bullet-active{
-        background-color: var(--primary--color);
-        position: relative;
-        transition: all 0.3s ease; /* 平滑過渡效果 */
-       }
-       .swiper1 .swiper-pagination-bullet-active::before{
-        content:"";
-        display: block;
-        width: 32px;
-        height: 32px;
-        border: 1px solid var(--primary--color);
-        border-radius: 50%;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-       }   
-       .swiper-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet, .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet{
-        margin: 0 10px;
-       }
+        .swiper .swiper-button-prev, .swiper .swiper-button-next{
+            color: var(--primary--color);
+        }
+        .swiper-button-next:after, .swiper-button-prev:after{
+            font-size: 61px;
+        }
+        .swiper .swiper-button-next{
+            right: 5px;
+        }
+        .swiper .swiper-button-prev{
+            left: 5px;
+        }
+        /* 分頁器的樣式 */
+        .swiper1 .swiper-pagination-bullet{
+            background-color: #d1d1d1;
+            width: 8px;
+        }
+        .swiper1 .swiper-pagination-bullet-active{
+            background-color: var(--primary--color);
+            position: relative;
+            transition: all 0.3s ease; /* 平滑過渡效果 */
+        }
+        .swiper1 .swiper-pagination-bullet-active::before{
+            content:"";
+            display: block;
+            width: 32px;
+            height: 32px;
+            border: 1px solid var(--primary--color);
+            border-radius: 50%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }   
+        .swiper1.swiper-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet, 
+        .swiper1.swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet{
+            margin: 0 15px;
+        }
+
+        /* 輪播圖內容樣式 */
+        .swiper1 .item-content{
+            margin: 0 46px;
+            /* border: 1px solid red; */
+            min-height: 580px;
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap; /* 允許換行 */
+            position: relative;
+        }
+        .swiper1 .item-content .left{
+            /* min-height: 580px; */
+            /* background-color: khaki; */
+        }
+        .swiper1 .item-content .right{
+            min-height: 580px;
+        }
+        .swiper1 .item-content .right .img{
+            width: 100%;
+            padding-top: 78%;
+            position: relative;
+            overflow: hidden; /* 隱藏超出容器的部分 */
+        }
+        .swiper1 .item-content .right .img img{
+            position: absolute;
+            width: 100%;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            object-fit: cover; /* 等比例縮放並覆蓋整個容器 */
+        }
+        .swiper1 .item-content .left .small-title{
+            font-size: 24px;
+            font-weight: bold;
+            color: var(--primary--color);
+            line-height: 1;
+            padding-top: 161px;
+        }
+        .swiper1 .item-content .left .title{
+            font-size: 48px;
+            font-weight: bold;
+            color: var(--font-black-color);
+            line-height: 1.1;
+            margin-top: 18px;
+        }
+        .swiper1 .item-content .left .desc{
+            font-size: 16px;
+            font-weight: bold;
+            color: var(--font-black-color);
+            line-height: 1;
+            margin-top: 38px;
+            margin-bottom: 60px;
+        }
+        .swiper1 .item-content .btn{
+            display: inline-block;
+            width: 200px;
+            height: 50px;
+            background-color: var(--primary--color);
+            color: var(--font-white-color);
+            text-align: center;
+            line-height: 50px;
+            font-size: 24px;
+            border-radius: 25px;
+            font-weight: bold;
+        }
+        .swiper1 .item-content .mobile-banner-btn{
+            display: none;
+        }
     </style>
-
     <!-- media & grid-system -->
     <link rel="stylesheet" href="css/media.css">
     <link rel="stylesheet" href="css/response.css">
@@ -231,11 +302,87 @@
                 <!-- Additional required wrapper -->
                 <div class="swiper-wrapper">
                     <!-- Slides -->
-                    <div class="swiper-slide">Slide 1</div>
-                    <div class="swiper-slide">Slide 2</div>
-                    <div class="swiper-slide">Slide 3</div>
-                    <div class="swiper-slide">Slide 4</div>
-                    <div class="swiper-slide">Slide 5</div>
+                    <div class="swiper-slide">
+                        <!-- 每項內容開始 -->
+                        <div class="item-content">
+                            <div class="left w36 col-md-12">
+                                <p class="small-title">探索新視野</p>
+                                <h1 class="title">踏上史詩般的旅程</h1>
+                                <p class="desc">探索新視野，創造難忘記的回憶</p>
+                                <a href="#" class="btn banner-btn">立即瀏覽</a>
+                            </div>
+                            <div class="right w64 col-md-12">
+                                <div class="img">
+                                    <img src="./image/home-banner1.png" alt="banner1">
+                                </div>
+                            </div>
+                            <div class="mobile-banner-btn">
+                                <a href="#" class="btn">立即瀏覽</a>
+                            </div>
+                        </div>
+                        <!-- 每項內容結束 -->
+                    </div>
+                    <div class="swiper-slide">
+                        <!-- 每項內容開始 -->
+                        <div class="item-content">
+                            <div class="left w36 col-md-12">
+                                <p class="small-title">探索新視野</p>
+                                <h1 class="title">踏上史詩般的旅程</h1>
+                                <p class="desc">探索新視野，創造難忘記的回憶</p>
+                                <a href="#" class="btn banner-btn">立即瀏覽</a>
+                            </div>
+                            <div class="righ w64 col-md-12">
+                                <div class="img">
+                                    <img src="./image/home-banner2.png" alt="banner1">
+                                </div>
+                            </div>
+                            <div class="mobile-banner-btn">
+                                <a href="#" class="btn">立即瀏覽</a>
+                            </div>
+                        </div>
+                        <!-- 每項內容結束 -->
+                    </div>
+                    <div class="swiper-slide">
+                        <!-- 每項內容開始 -->
+                        <div class="item-content">
+                            <div class="left w36 col-md-12">
+                                <p class="small-title">探索新視野</p>
+                                <h1 class="title">踏上史詩般的旅程</h1>
+                                <p class="desc">探索新視野，創造難忘記的回憶</p>
+                                <a href="#" class="btn">立即瀏覽</a>
+                            </div>
+                            <div class="right w64 col-md-12">
+                                <div class="img">
+                                    <img src="./image/home-banner3.png" alt="banner1">
+                                </div>
+                            </div>
+                            <div class="mobile-banner-btn">
+                                <a href="#" class="btn">立即瀏覽</a>
+                            </div>
+                        </div>
+                        <!-- 每項內容結束 -->
+                    </div>
+                    <div class="swiper-slide">
+                        <!-- 每項內容開始 -->
+                        <div class="item-content">
+                            <div class="left w36 col-md-12">
+                                <p class="small-title">探索新視野</p>
+                                <h1 class="title">踏上史詩般的旅程</h1>
+                                <p class="desc">探索新視野，創造難忘記的回憶</p>
+                                <a href="#" class="btn">立即瀏覽</a>
+                            </div>
+                            <div class="right w64 col-md-12">
+                                <div class="img">
+                                    <img src="./image/home-banner4.png" alt="banner1">
+                                </div>
+                            </div>
+                            <div class="mobile-banner-btn">
+                                <a href="#" class="btn">立即瀏覽</a>
+                            </div>
+                        </div>
+                        <!-- 每項內容結束 -->
+                    </div>
+                    
                 </div>
                 <!-- If we need pagination -->
                 <div class="swiper-pagination"></div>
